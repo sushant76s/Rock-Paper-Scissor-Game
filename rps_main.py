@@ -33,5 +33,25 @@ comp_indicator = Label(rpsgame, text = "COMPUTER", font = 50, bg="#42CFEF", fg="
 user_indicator.grid(row=0, column=3)
 comp_indicator.grid(row=0, column=1)
 
+# Message
+msg = Label(rpsgame, font=50, bg="#42CFEF", fg="white")
+msg.grid(row=3, column=2)
+
+# Update Message
+def updateMessage(x):
+    msg['text'] = x
+
+# Update user score
+def updateUserScore():
+    score = int(playerScore['text'])
+    score += 1
+    playerScore['text'] = str(score)
+
+# Update comp score
+def updateCompScore():
+    score = int(computerScore['text'])
+    score += 1
+    computerScore['text'] = str(score)
+
 
 rpsgame.mainloop()
