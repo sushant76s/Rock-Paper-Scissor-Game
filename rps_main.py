@@ -21,4 +21,17 @@ comp_label = Label(rpsgame, image=scissor_comp, bg="#42CFEF")
 comp_label.grid(row=1, column=0)
 user_label.grid(row=1, column=4)
 
+# Scores
+userScore = Label(rpsgame, text = 0, font = 100, bg="#42CFEF", fg="white")
+compScore = Label(rpsgame, text = 0, font = 100, bg="#42CFEF", fg="white")
+compScore.grid(row=1, column=1)
+userScore.grid(row=1, column=3)
+
+# indicators
+user_indicator = Label(rpsgame, text = "USER", font = 50, bg="#42CFEF", fg="white")
+comp_indicator = Label(rpsgame, text = "COMPUTER", font = 50, bg="#42CFEF", fg="white")
+user_indicator.grid(row=0, column=3)
+comp_indicator.grid(row=0, column=1)
+
+
 rpsgame.mainloop()
