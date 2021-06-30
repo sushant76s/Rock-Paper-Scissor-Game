@@ -43,15 +43,45 @@ def updateMessage(x):
 
 # Update user score
 def updateUserScore():
-    score = int(playerScore['text'])
+    score = int(userScore['text'])
     score += 1
-    playerScore['text'] = str(score)
+    userScore['text'] = str(score)
 
 # Update comp score
 def updateCompScore():
     score = int(computerScore['text'])
     score += 1
     computerScore['text'] = str(score)
+
+# Check Winner
+def checkWinner(user, computer):
+    if user == computer:
+        updateMessage("It's a tie !!!")
+    elif user == "rock":
+        if computer == "paper":
+            updateMessage("You loose")
+            updateCompScore()
+        else:
+            updateMessage("You Win")
+            updateUserScore()
+    elif user == "paper":
+        if computer == "scissor":
+            updateMessage("You loose")
+            updateCompScore()
+        else:
+            updateMessage("You Win")
+            updateUserScore()
+    elif user == "scissor":
+        if computer == "rock":
+            updateMessage("You loose")
+            updateCompScore()
+        else:
+            updateMessage("You Win")
+            updateUserScore()
+
+    else:
+        pass
+    
 
 
 rpsgame.mainloop()
