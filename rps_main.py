@@ -44,15 +44,15 @@ def updateMessage(x):
 
 # Update user score
 def updateUserScore():
-    score = int(userScore['text'])
+    score = int(userScore["text"])
     score += 1
-    userScore['text'] = str(score)
+    userScore["text"] = str(score)
 
 # Update comp score
 def updateCompScore():
-    score = int(computerScore['text'])
+    score = int(compScore["text"])
     score += 1
-    computerScore['text'] = str(score)
+    compScore["text"] = str(score)
 
 # Check Winner
 def checkWinner(user, computer):
