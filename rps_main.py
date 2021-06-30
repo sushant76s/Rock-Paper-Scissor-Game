@@ -83,5 +83,28 @@ def checkWinner(user, computer):
         pass
     
 
+# Update choices
+choices = ["rock", "paper", "scissor"]
+
+def updateChoice(x):
+# For computer
+    computerChoice = choices[randint(0,2)]
+    if computerChoice == "rock":
+        comp_label.configure(image=rock_comp)
+    elif computerChoice == "paper":
+        comp_label.configure(image=paper_comp)
+    else:
+        comp_label.configure(image=scissor_comp)
+
+# For user
+    if x == "rock":
+        user_label.configure(image=rock_user)
+    elif x == "paper":
+        user_label.configure(image=paper_user)
+    else:
+        user_label.configure(Image=scissor_user)
+    
+    checkWinner(x, computerChoice)
+
 
 rpsgame.mainloop()
