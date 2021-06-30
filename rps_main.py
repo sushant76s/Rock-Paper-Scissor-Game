@@ -1,5 +1,6 @@
 from tkinter import*
 from PIL import Image, ImageTk
+from random import randint
 
 
 # main game window
@@ -102,9 +103,18 @@ def updateChoice(x):
     elif x == "paper":
         user_label.configure(image=paper_user)
     else:
-        user_label.configure(Image=scissor_user)
+        user_label.configure(image=scissor_user)
     
     checkWinner(x, computerChoice)
+
+
+# Buttons
+rock = Button(rpsgame, width=20, height=2, text="ROCK",
+              bg="#FF3E4D", fg="white", command=lambda: updateChoice("rock")).grid(row=2, column=1)
+paper = Button(rpsgame, width=20, height=2, text="PAPER",
+               bg="#FAD02E", fg="white", command=lambda: updateChoice("paper")).grid(row=2, column=2)
+scissor = Button(rpsgame, width=20, height=2, text="SCISSOR",
+                 bg="#0ABDE3", fg="white", command=lambda: updateChoice("scissor")).grid(row=2, column=3)
 
 
 rpsgame.mainloop()
