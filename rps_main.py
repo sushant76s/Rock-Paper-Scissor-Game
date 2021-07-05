@@ -36,7 +36,7 @@ comp_indicator.grid(row=0, column=1)
 
 # Message
 msg = Label(rpsgame, font=50, bg="#42CFEF", fg="white")
-msg.grid(row=3, column=2)
+msg.grid(row=1, column=2)
 
 # Update Message
 def updateMessage(x):
