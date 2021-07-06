@@ -11,16 +11,8 @@ rpsgame.configure(background="#42CFEF")
 
 # sounds
 pygame.mixer.init()
-#pygame.mixer.music.load('back.mp3')
-# #pygame.mixer.music.play()
-# if event.type == pygame.KEYDOWN:
-#                 if event.key == pygame.K_SPACE:
-#                     pygame.mixer.music.load('snake_bg_music.mp3')
-#                     pygame.mixer.music.play()
-#                     gameloop()
-#                 if event.key == pygame.K_q:
-#                     exit()
-
+#pygame.mixer.music.load('music.mp3')
+#pygame.mixer.music.play()
 
 # images
 rock_user = ImageTk.PhotoImage(Image.open("data\\rock-user.png"))
@@ -51,6 +43,11 @@ comp_indicator.grid(row=0, column=1)
 # Message
 msg = Label(rpsgame, font=50, bg="#42CFEF", fg="white")
 msg.grid(row=1, column=2)
+
+def choiceSelectSound():
+    pygame.mixer.music.load('data\\select.mp3')
+    pygame.mixer.music.play()
+
 
 # Update Message
 def updateMessage(x):
@@ -114,14 +111,13 @@ def updateChoice(x):
 # For user
     if x == "rock":
         user_label.configure(image=rock_user)
-        # playsound('data\\select.wav')
-        pygame.mixer.music.load('snake_bg_music.mp3')
-        pygame.mixer.music.play()
-        # pygame.mixer.music.load('snake_bg_music.mp3')
+        choiceSelectSound()
     elif x == "paper":
         user_label.configure(image=paper_user)
+        choiceSelectSound()
     else:
         user_label.configure(image=scissor_user)
+        choiceSelectSound()
     
     checkWinner(x, computerChoice)
 
