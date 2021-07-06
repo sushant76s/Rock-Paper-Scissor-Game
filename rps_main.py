@@ -1,12 +1,26 @@
 from tkinter import*
 from PIL import Image, ImageTk
 from random import randint
-
+# from playsound import playsound
+import pygame
 
 # main game window
 rpsgame = Tk()
 rpsgame.title("Rock Paper Scissor")
 rpsgame.configure(background="#42CFEF")
+
+# sounds
+pygame.mixer.init()
+#pygame.mixer.music.load('back.mp3')
+# #pygame.mixer.music.play()
+# if event.type == pygame.KEYDOWN:
+#                 if event.key == pygame.K_SPACE:
+#                     pygame.mixer.music.load('snake_bg_music.mp3')
+#                     pygame.mixer.music.play()
+#                     gameloop()
+#                 if event.key == pygame.K_q:
+#                     exit()
+
 
 # images
 rock_user = ImageTk.PhotoImage(Image.open("data\\rock-user.png"))
@@ -100,6 +114,10 @@ def updateChoice(x):
 # For user
     if x == "rock":
         user_label.configure(image=rock_user)
+        # playsound('data\\select.wav')
+        pygame.mixer.music.load('snake_bg_music.mp3')
+        pygame.mixer.music.play()
+        # pygame.mixer.music.load('snake_bg_music.mp3')
     elif x == "paper":
         user_label.configure(image=paper_user)
     else:
