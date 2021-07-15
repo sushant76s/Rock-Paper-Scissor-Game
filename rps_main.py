@@ -40,12 +40,12 @@ userScore.grid(row=1, column=3)
 # indicators
 user_indicator = Label(rpsgame, text = "USER", font = 50, bg="#42CFEF", fg="white")
 comp_indicator = Label(rpsgame, text = "COMPUTER", font = 50, bg="#42CFEF", fg="white")
-user_indicator.grid(row=0, column=3)
-comp_indicator.grid(row=0, column=1)
+user_indicator.grid(row=0, column=4)
+comp_indicator.grid(row=0, column=0)
 
 # Message
 msg = Label(rpsgame, font=50, bg="#42CFEF", fg="white")
-msg.grid(row=1, column=2)
+msg.grid(row=2, column=2)
 
 def choiceSelectSound():
     pygame.mixer.music.load('data\\select.mp3')
