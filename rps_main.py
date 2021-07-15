@@ -21,12 +21,15 @@ scissor_user = ImageTk.PhotoImage(Image.open("data\\scissors-user.png"))
 rock_comp = ImageTk.PhotoImage(Image.open("data\\rock.png"))
 paper_comp = ImageTk.PhotoImage(Image.open("data\\paper.png"))
 scissor_comp = ImageTk.PhotoImage(Image.open("data\\scissors.png"))
+combine_image = ImageTk.PhotoImage(Image.open("data\\rps.png"))
 
 # insertion of images
 user_label = Label(rpsgame, image=scissor_user, bg="#42CFEF")
 comp_label = Label(rpsgame, image=scissor_comp, bg="#42CFEF")
+img_label = Label(rpsgame, image=combine_image, bg="#42CFEF")
 comp_label.grid(row=1, column=0)
 user_label.grid(row=1, column=4)
+img_label.grid(row=1, column=2)
 
 # Scores
 userScore = Label(rpsgame, text = 0, font = 100, bg="#42CFEF", fg="white")
@@ -124,11 +127,11 @@ def updateChoice(x):
 
 # Buttons
 rock = Button(rpsgame, width=20, height=2, text="ROCK",
-              bg="#FF3E4D", fg="white", command=lambda: updateChoice("rock")).grid(row=2, column=1)
+              bg="#FF3E4D", fg="white", command=lambda: updateChoice("rock")).grid(row=3, column=1)
 paper = Button(rpsgame, width=20, height=2, text="PAPER",
-               bg="#FAD02E", fg="white", command=lambda: updateChoice("paper")).grid(row=2, column=2)
+               bg="#FAD02E", fg="white", command=lambda: updateChoice("paper")).grid(row=3, column=2)
 scissor = Button(rpsgame, width=20, height=2, text="SCISSOR",
-                 bg="#0ABDE3", fg="white", command=lambda: updateChoice("scissor")).grid(row=2, column=3)
+                 bg="#0ABDE3", fg="white", command=lambda: updateChoice("scissor")).grid(row=3, column=3)
 
 
 rpsgame.mainloop()
